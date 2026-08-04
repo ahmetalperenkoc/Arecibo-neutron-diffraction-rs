@@ -1,0 +1,16 @@
+run_number,analysis_set,specimen,wire,measurement_direction,reflection,measurement_position,description
+4381,pole-figures,A36 Fe reference rod,,orientation scan,{220},chi-phi grid,Fe {220} pole-figure scan of the reference rod.
+4382,pole-figures,A36 Fe reference rod,,orientation scan,{211},chi-phi grid,Fe {211} pole-figure scan of the reference rod.
+4384,axial-residual-strain,A36 Fe reference rod,,reference,{211},orientation scan,Fe {211} stress-free reference measurement.
+4392,axial-residual-strain,B12W,Wire E,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire E.
+4394,axial-residual-strain,B12W,Wire E,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire E.
+4396,axial-residual-strain,M8N,Wire C,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire C.
+4399,axial-residual-strain,M8N,Wire C,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire C.
+4400,axial-residual-strain,M8N,Wire B,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire B.
+4401,axial-residual-strain,M8N,Wire B,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire B.
+4633,radial-residual-strain,B12W,Wire F,axial,{211},along-wire line scan,Axial Fe {211} measurements used in the axial-radial comparison.
+4635,radial-residual-strain,B12W,Wire F,radial,{211},along-wire line scan,Radial Fe {211} measurements along Wire F.
+4645,axial-residual-strain,B12W,Wire F,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire F.
+4646,alignment-sensitivity,B12W,Wire F,axial,{211},four cross-wire locations,Gauge-volume shifts at four positions along Wire F.
+4667,axial-residual-strain,B12W,Wire D,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire D.
+4678,axial-residual-strain,M8N,Wire A,axial,{211},along-wire line scan,Axial Fe {211} measurements along Wire A.

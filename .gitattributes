@@ -1,0 +1,6 @@
+*.h5 binary -diff
+*.csv text eol=lf
+*.m text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf

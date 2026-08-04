@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use these data or analysis scripts, please cite this repository."
+title: "Arecibo Telescope neutron diffraction data and analysis code"
+type: software
+authors:
+  - given-names: "Ahmet Alperen"
+    family-names: "Koç"
+    orcid: "https://orcid.org/0000-0002-9553-1191"
+version: 1.0.0
+repository-code: "https://github.com/ahmetalperenkoc/Arecibo-neutron-diffraction-rs"
+url: "https://github.com/ahmetalperenkoc/Arecibo-neutron-diffraction-rs"
+license: BSD-3-Clause
+abstract: >-
+  Neutron diffraction arrays, pyRS-exported fitted quantities, metadata,
+  and MATLAB and Python analysis code used to evaluate residual strain,
+  gauge-volume alignment sensitivity, and crystallographic texture in
+  recovered Arecibo Telescope cable wires.
+keywords:
+  - neutron diffraction
+  - residual strain
+  - residual stress
+  - HIDRA
+  - pyRS
+  - Arecibo Telescope
+  - pole figures

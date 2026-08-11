@@ -80,7 +80,7 @@ The pole-figure analysis requires MTEX to be installed separately and available 
 
 ## Acknowledgment
 
-This research used resources at the High Flux Isotope Reactor, a DOE Office of Science User Facility operated by the Oak Ridge National Laboratory. The beam time was allocated to HIDRA on proposal number IPTS-[32250](https://user.ornl.gov/Account/GetPingFedSSOURL?URL=https://snsapp1.sns.ornl.gov/xprod/f?p=100:52:::NO::P52_PRPSL_ID,P52_SUBMISS_NBR:32250,1).0, *Arecibo Telescope Failure: Validating BEI readings through Strain Mapping*.
+This research used resources at the High Flux Isotope Reactor, a DOE Office of Science User Facility operated by the Oak Ridge National Laboratory. The beam time was allocated to HIDRA on proposal number IPTS-32250.0, *Arecibo Telescope Failure: Validating BEI readings through Strain Mapping*.
 
 ## Citation
 

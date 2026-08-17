@@ -1,12 +1,17 @@
-# Arecibo neutron diffraction data
+# Arecibo neutron diffraction data and analysis code
 
 ## Overview
 
-This repository contains neutron diffraction data and final analysis inputs used to evaluate axial residual strain, radial residual strain, gauge-volume alignment sensitivity, and crystallographic texture through pole figures.
+This repository contains neutron diffraction data and analysis code used to evaluate axial residual strain, radial residual strain, gauge-volume alignment sensitivity, and crystallographic texture through pole figures.
+
+The corresponding autoreduced HIDRA diffraction data are publicly available through ORNL's ONCat system:
+
+- DOI: [10.14461/oncat.data/3419321](https://doi.org/10.14461/oncat.data/3419321)
+- ONCat: [https://oncat.ornl.gov/dois/6a7b8429ad0a3672374c8379](https://oncat.ornl.gov/dois/6a7b8429ad0a3672374c8379)
 
 ## Repository contents
 
-- `reduced_diffraction_data.h5` contains the reduced one-dimensional diffraction arrays used by the four analyses, organized by run number. Each run includes `two_theta`, `intensity`, `intensity_variance`, the subrun index, and the position/orientation coordinates needed to distinguish measurements. This is a reduced data product, not an original metadata-rich HIDRA instrument-acquisition file.
+- `reduced_diffraction_data.h5` contains a lossless-compressed copy of the reduced one-dimensional diffraction data in a format convenient for analysis. The data are organized by run number, with each run containing `two_theta`, `intensity`, `intensity_variance`, the subrun index, and the position/orientation coordinates needed to distinguish measurements.
 - `run_catalog.csv` maps each published run to its analysis set, physical specimen, wire, measurement direction, reflection, and position.
 - `fitted_values.csv` contains the fitted d-spacings, uncertainties, and peak-fitting bounds used in the analyses.
 - `alignment-sensitivity/` contains the four-location gauge-volume shift table and Python plot.
@@ -16,17 +21,19 @@ This repository contains neutron diffraction data and final analysis inputs used
 
 ## HDF5 compression
 
-The numerical datasets in `reduced_diffraction_data.h5` use lossless gzip compression to reduce the download and storage size. The compression does not change array values, dimensions, data types, or numerical precision, and `h5py` and MATLAB decompress the data transparently when it is read.
+The numerical datasets in `reduced_diffraction_data.h5` use lossless gzip compression. Compression does not change the array values, dimensions, data types, or numerical precision, and `h5py` and MATLAB decompress the data transparently when read.
 
 ## Peak fitting with pyRS
 
 [pyRS](https://doi.org/10.1107/S1600576721010554) is open-source neutron-diffraction reduction and analysis software developed for the High Intensity Diffractometer for Residual Stress Analysis (HIDRA) at Oak Ridge National Laboratory. Single-peak analyses were carried out using pyRS with individual pseudo-Voigt peak functions and linear backgrounds. The Lorentzian–Gaussian mixture parameter was fixed at `0.6`.
 
-The lower and upper $2\theta$ fitting boundaries, fitted d-spacings, and fitting uncertainties are provided in the relevant `fitted_values.csv` files. `reduced_diffraction_data.h5` contains the corresponding diffraction arrays so users can inspect the patterns and independently repeat or modify the fits. The MATLAB and Python scripts perform the downstream calculations and visualizations after peak fitting. The repository scripts begin from the exported fitted-value tables. The diffraction arrays and exact fitting regions are included to support inspection and independent refitting, but the scripts do not invoke pyRS.
+The lower and upper $2\theta$ fitting boundaries, fitted d-spacings, and fitting uncertainties are provided in the relevant `fitted_values.csv` files. `reduced_diffraction_data.h5` contains the corresponding diffraction arrays so users can inspect the patterns and independently repeat or modify the fits.
+
+The MATLAB and Python scripts perform the downstream calculations and visualizations after peak fitting. The repository scripts begin from the exported fitted-value tables and do not invoke pyRS.
 
 ## Reading the reduced diffraction data
 
-Python:
+### Python
 
 ```python
 import h5py
@@ -43,7 +50,7 @@ plt.ylabel("Intensity (counts)")
 plt.show()
 ```
 
-MATLAB:
+### MATLAB
 
 ```matlab
 info = h5info('reduced_diffraction_data.h5', '/runs');
@@ -80,13 +87,15 @@ The pole-figure analysis requires MTEX to be installed separately and available 
 
 ## Acknowledgment
 
-This research used resources at the High Flux Isotope Reactor, a DOE Office of Science User Facility operated by the Oak Ridge National Laboratory. The beam time was allocated to HIDRA on proposal number IPTS-32250.0, *Arecibo Telescope Failure: Validating BEI readings through Strain Mapping*.
+This research used resources at the High Flux Isotope Reactor, a DOE Office of Science User Facility operated by Oak Ridge National Laboratory. Beam time was allocated to HIDRA under proposal IPTS-32250.0, *Arecibo Telescope Failure: Validating BEI readings through Strain Mapping*.
 
 ## Citation
 
 Machine-readable citation metadata are provided in `CITATION.cff`.
 
 A. A. Koç, *Arecibo neutron diffraction data and analysis code*, version 1.0.0 (2026), https://github.com/ahmetalperenkoc/Arecibo-neutron-diffraction-rs.
+
+For the autoreduced neutron diffraction data, cite the ONCat dataset listed above.
 
 ## Licenses
 
